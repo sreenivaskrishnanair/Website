@@ -4,6 +4,7 @@ import faLinkedin from '@fortawesome/fontawesome-free-brands/faLinkedin'
 import faFacebook from '@fortawesome/fontawesome-free-brands/faFacebook'
 import faInstagram from '@fortawesome/fontawesome-free-brands/faInstagram'
 import faGithub from '@fortawesome/fontawesome-free-brands/faGithub'
+import emailjs from 'emailjs-com'
 
 
 
@@ -12,6 +13,20 @@ class Main extends React.Component {
     //personalwebsitesree
 
     let close = <div className="close" onClick={() => { this.props.onCloseArticle() }}></div>
+
+    function sendEmail(e) {
+      // alert("Thank You for contacting Sree. He will get back to you as soon as possible!");
+      // console.log("hehhehe");
+      e.preventDefault();
+      emailjs.sendForm('gmail', 'template_cadocf7', e.target, 'user_HD5uWoDpA9Ac8SMiij0MV')
+        .then((result) => {
+          console.log(result.text);
+        }, (error) => {
+          console.log(error.text);
+        });
+        alert("Thank You for contacting me. I will get back to you as soon as possible!");
+        e.target.reset();
+    }
 
     return (
       <div id="main" style={this.props.timeout ? { display: 'flex' } : { display: 'none' }}>
@@ -131,6 +146,80 @@ class Main extends React.Component {
           </article>
           <br />
 
+          <article id="projects" className={`${this.props.article === 'projects' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{ display: 'none' }}>
+            <h2 className="major">Enigma Machine</h2>
+            <span className="image main"><img src="/static/images/projects/enigma.png" alt="" /></span>
+            <p style={{ textAlign: "justify" }}><b>Project Description:</b><br />
+            Implemented complete enigma machine with full encrypt/decrypt capabilities. Can encrypt message of any length. Can also encrypt/decrypt to several rotor levels. Highly efficient code as it is written in C.
+            </p>
+            <p>
+              <b>Techinal Tools Utilized:</b> <br />
+              <ul>
+                <li>C language: Complete machine implemented in C</li>
+              </ul>
+            </p>
+          </article>
+          <br />
+          <article id="projects" className={`${this.props.article === 'projects' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{ display: 'none' }}>
+            <h2 className="major">Memory Allocator</h2>
+            <span className="image main"><img src="/static/images/projects/malloc.png" alt="" /></span>
+            <p style={{ textAlign: "justify" }}><b>Project Description:</b><br />
+            Simulated low level implementation of Heap memory Allocator. implementation models malloc(size) in C. Allocates size number of bits of memory on the heap and returns memory address of first useable block. Simulates First - Fit, Worst - Fit and Best - Fit policy of allocation with low to zero fragmentation. Memory coalescing implemented.
+            </p>
+            <p>
+              <b>Techinal Tools Utilized:</b> <br />
+              <ul>
+                <li>C language: Allocator implemented in C</li>
+              </ul>
+            </p>
+          </article>
+          <br />
+          <article id="projects" className={`${this.props.article === 'projects' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{ display: 'none' }}>
+            <h2 className="major">Rock Paper Scissor</h2>
+            <span className="image main"><img src="/static/images/projects/bucky.png" alt="" /></span>
+            <p style={{ textAlign: "justify" }}><b>Project Description:</b><br />
+            Implemented the classic rock, paper, scissors game on the bucky board. Bucky Board is an arduino based programmable board available to students at UW - Madison. Game logic was implemented for rwo players. boards communicate to each other in wirelessly. Implementation in C.
+            </p>
+            <p>
+              <b>Techinal Tools Utilized:</b> <br />
+              <ul>
+                <li>C language: game implemented in C</li>
+                <li>Bucky Board: Arduino based programmable board.</li>
+              </ul>
+            </p>
+          </article>
+          <br />
+          <article id="projects" className={`${this.props.article === 'projects' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{ display: 'none' }}>
+            <h2 className="major">Data Structures</h2>
+            <span className="image main"><img src="/static/images/projects/data.jpg" alt="" /></span>
+            <p style={{ textAlign: "justify" }}><b>Project Description:</b><br />
+            Implemented several data structures as part of programming course. </p>
+            <p>
+              <b>Techinal Tools Utilized:</b> <br />
+              <ul>
+                <li>Java: structures implemented in Java</li>
+                <li>Data Structures: BSTs, red black tree, hash table, maps, graphs, etc</li>
+                <li>Analytics Tools: compared structure efficiencies using Java Mission Control</li>
+              </ul>
+            </p>
+          </article>
+          <br />
+          <article id="projects" className={`${this.props.article === 'projects' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{ display: 'none' }}>
+            <h2 className="major">Telemetry</h2>
+            <span className="image main"><img src="/static/images/projects/baja.png" alt="" /></span>
+            <p style={{ textAlign: "justify" }}><b>Project Description:</b><br />
+            Helped implement Telementry DAQ system for racing car in the Wisconsin Baja team. DAQs were used to analyze structural stress and strain on the car as it moved through terrain.</p>
+            <p>
+              <b>Techinal Tools Utilized:</b> <br />
+              <ul>
+                <li>Telemetry-DAQ system: Analyze stress and strain on chasis frame</li>
+                <li>Material science: Performed analytics to decide best materials for chasis and type of movinh joints / parts in car.</li>
+                <li>Analytics Tools: programmed in C</li>
+              </ul>
+            </p>
+          </article>
+          <br />
+
 
           {close}
         </article>
@@ -141,7 +230,7 @@ class Main extends React.Component {
           <p>Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices.</p>
           <p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet feugiat tempus.</p>
           {close} */}
-          <iframe src="../static/resume.pdf" width="100%" height="740rem"/>
+          <iframe src="../static/resume.pdf" width="100%" height="740rem" />
           {close}
         </article>
 
@@ -162,18 +251,18 @@ class Main extends React.Component {
 
         <article id="contact" className={`${this.props.article === 'contact' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{ display: 'none' }}>
           <h2 className="major">Contact</h2>
-          <form method="post" action="#">
+          <form onSubmit={sendEmail}>
             <div className="field half first">
               <label htmlFor="name">Name</label>
-              <input type="text" name="name" id="name" />
+              <input type="text" name="name" id="name" required/>
             </div>
             <div className="field half">
               <label htmlFor="email">Email</label>
-              <input type="text" name="email" id="email" />
+              <input type="email" name="email" id="email" required/>
             </div>
             <div className="field">
               <label htmlFor="message">Message</label>
-              <textarea name="message" id="message" rows="4"></textarea>
+              <textarea name="message" id="message" rows="4" required></textarea>
             </div>
             <ul className="actions">
               <li><input type="submit" value="Send Message" className="special" /></li>
@@ -181,7 +270,7 @@ class Main extends React.Component {
             </ul>
           </form>
           <ul className="icons">
-          <li><a href="https://www.linkedin.com/in/sreenivaskrishnanair">
+            <li><a href="https://www.linkedin.com/in/sreenivaskrishnanair">
               <FontAwesomeIcon icon={faLinkedin} />
             </a></li>
             <li><a href="https://www.instagram.com/sreenivaskrishnanair/">
