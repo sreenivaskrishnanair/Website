@@ -5,8 +5,16 @@ import Header from "../components/Header"
 import Main from "../components/Main"
 import Footer from "../components/Footer"
 
+import Prismic from 'prismic-javascript'
+import { Client } from "../prismic-configurations"
+import {RichText} from "prismic-reactjs"
+import Link from "next/link";
+
+
+
 class IndexPage extends React.Component {
-    constructor(props) {
+    
+    constructor(props, {aboutme}) {
         super(props)
         this.state = {
             isArticleVisible: false,
@@ -73,7 +81,7 @@ class IndexPage extends React.Component {
             <div className={`body ${this.state.loading} ${this.state.isArticleVisible ? "is-article-visible" : ""}`}>
                 <div>
                     <Head>
-                        <title>Next.js Starter</title>
+                        <title>Sree UW-Madison</title>
                         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,600,600i" rel="stylesheet" />
                     </Head>
 
@@ -97,5 +105,26 @@ class IndexPage extends React.Component {
         )
     }
 }
+// console.log("mee"); 
+  
 
+
+//function for handling Prismic
 export default IndexPage
+
+export async function getServerSideProps() {
+
+    const aboutme = await Client().query(
+        Prismic.Predicates.at("document.type", "about_me") 
+    );
+    console.log("here");
+    console.log(aboutme); 
+
+    return {
+        props: {
+            aboutme: aboutme
+        }, 
+    };
+}
+
+
