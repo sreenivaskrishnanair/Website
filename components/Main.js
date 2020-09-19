@@ -1,9 +1,4 @@
 import PropTypes from 'prop-types';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome'
-import faLinkedin from '@fortawesome/fontawesome-free-brands/faLinkedin'
-import faFacebook from '@fortawesome/fontawesome-free-brands/faFacebook'
-import faInstagram from '@fortawesome/fontawesome-free-brands/faInstagram'
-import faGithub from '@fortawesome/fontawesome-free-brands/faGithub'
 import emailjs from 'emailjs-com'
 
 
@@ -31,7 +26,7 @@ class Main extends React.Component {
     return (
       <div id="main" style={this.props.timeout ? { display: 'flex' } : { display: 'none' }}>
         <article id="about" className={`${this.props.article === 'about' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{ display: 'none' }}>
-          <h2 className="major">About</h2>
+          <h2 className="major">About </h2>
           <span className="image main"><img src="/static/images/profile.jpg" alt="" /></span>
           <div style={{ textAlign: "justify" }}>
             <ul>
@@ -266,13 +261,13 @@ class Main extends React.Component {
           </form>
           <ul className="icons">
             <li><a href="https://www.linkedin.com/in/sreenivaskrishnanair">
-              <FontAwesomeIcon icon={faLinkedin} />
+              l<i className="fab fa-linkedin" aria-hidden="true"></i>
             </a></li>
             <li><a href="https://www.instagram.com/sreenivaskrishnanair/">
-              <FontAwesomeIcon icon={faInstagram} />
+            <i className="fab fa-instagram-square" aria-hidden="true"></i>
             </a></li>
             <li><a href="https://github.com/sreenivaskrishnanair">
-              <FontAwesomeIcon icon={faGithub} />
+            <i className="fab fa-github" aria-hidden="true"></i>
             </a></li>
           </ul>
           {close}

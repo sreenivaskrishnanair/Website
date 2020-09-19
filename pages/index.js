@@ -78,6 +78,7 @@ class IndexPage extends React.Component {
                         <title>Sree UW - Madison</title>
                         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,600,600i" rel="stylesheet" />
                         <link rel="shortcut icon" href=""></link>
+                        <script src="https://kit.fontawesome.com/71759de8ce.js" crossorigin="anonymous"></script>
                     </Head>
 
                     <style dangerouslySetInnerHTML={{ __html: stylesheet }} />

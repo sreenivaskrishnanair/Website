@@ -7,15 +7,15 @@ import PropTypes from 'prop-types';
 const Footer = (props) => (
     <footer id="footer" style={props.timeout ? {display: 'none'} : {}}>
        <ul className="icons">
-            {/* <li><a href="https://www.linkedin.com/in/sreenivaskrishnanair">
-              <FontAwesomeIcon icon={faLinkedin} />
+            <li><a href="https://www.linkedin.com/in/sreenivaskrishnanair">
+            <i className="fab fa-linkedin" aria-hidden="true"></i>
             </a></li>
             <li><a href="https://www.instagram.com/sreenivaskrishnanair/">
-              <FontAwesomeIcon icon={faInstagram} />
+            <i className="fab fa-instagram-square" aria-hidden="true"></i>
             </a></li>
             <li><a href="https://github.com/sreenivaskrishnanair">
-              <FontAwesomeIcon icon={faGithub} />
-            </a></li> */}
+            <i className="fab fa-github" aria-hidden="true"></i>
+            </a></li>
           </ul>
     </footer>
 )
