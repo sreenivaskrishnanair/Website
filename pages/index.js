@@ -84,7 +84,6 @@ class IndexPage extends React.Component {
                         <title>Sree UW-Madison</title>
                         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,600,600i" rel="stylesheet" />
                         <link rel="shortcut icon" href=""></link>
-                        <meta http-equiv="Refresh" content="0; URL=https://www.youtube.com"></meta>
                     </Head>
 
                     <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
