@@ -5,12 +5,6 @@ import Header from "../components/Header"
 import Main from "../components/Main"
 import Footer from "../components/Footer"
 
-import Prismic from 'prismic-javascript'
-import { Client } from "../prismic-configurations"
-import {RichText} from "prismic-reactjs"
-import Link from "next/link";
-
-
 
 class IndexPage extends React.Component {
     
@@ -100,6 +94,7 @@ class IndexPage extends React.Component {
                         <Footer timeout={this.state.timeout} />
                     </div>
 
+
                     <div id="bg" />
                 </div>
             </div>
@@ -113,19 +108,5 @@ class IndexPage extends React.Component {
 //function for handling Prismic
 export default IndexPage
 
-export async function getServerSideProps() {
-
-    const aboutme = await Client().query(
-        Prismic.Predicates.at("document.type", "about_me") 
-    );
-    console.log("here");
-    console.log(aboutme); 
-
-    return {
-        props: {
-            aboutme: aboutme
-        }, 
-    };
-}
 
 
