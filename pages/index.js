@@ -81,7 +81,7 @@ class IndexPage extends React.Component {
             <div className={`body ${this.state.loading} ${this.state.isArticleVisible ? "is-article-visible" : ""}`}>
                 <div>
                     <Head>
-                        <title>Sree UW-Madison</title>
+                        <title>Sree UW - Madison</title>
                         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,600,600i" rel="stylesheet" />
                         <link rel="shortcut icon" href=""></link>
                     </Head>
